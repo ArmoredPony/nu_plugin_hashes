@@ -26,8 +26,6 @@ use nu_protocol::{
 
 use crate::HashesPlugin;
 
-pub mod ascon;
-
 pub trait Hasher: Digest + Clone {
   fn name() -> &'static str;
   fn examples() -> Vec<Example<'static>>;
@@ -37,7 +35,7 @@ pub trait Hasher: Digest + Clone {
 pub struct GenericHasher<H: Hasher> {
   name: String,
   description: String,
-  phantom: PhantomData<H>,
+  _hasher: PhantomData<H>,
 }
 
 impl<H: Hasher> Default for GenericHasher<H> {
@@ -48,7 +46,7 @@ impl<H: Hasher> Default for GenericHasher<H> {
         "Hash a value using the {} hash algorithm.",
         H::name()
       ),
-      phantom: PhantomData,
+      _hasher: PhantomData,
     }
   }
 }
