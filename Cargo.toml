@@ -1,0 +1,11 @@
+[package]
+name = "nu_plugin_hashes"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ascon-hash = "0.2.0"
+digest = "0.10.7"
+nu-cmd-base = "0.98.0"
+nu-plugin = "0.98.0"
+nu-protocol = "0.98.0"
