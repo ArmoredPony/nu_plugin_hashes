@@ -3,52 +3,78 @@ name = "nu_plugin_hashes"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = [
+    "ascon-hash",
+    "belt-hash",
+    "blake2",
+    "fsb",
+    "gost94",
+    "groestl",
+    "jh",
+    "md2",
+    "md4",
+    "ripemd",
+    "sha1",
+    "sha2",
+    "sha3",
+    "shabal",
+    "skein",
+    "sm3",
+    "streebog",
+    "tiger",
+    "whirlpool",
+]
+
 [dependencies]
 nu-cmd-base = "0.98.0"
 nu-plugin = "0.98.0"
 nu-protocol = "0.98.0"
 digest = "0.10.7"
-ascon-hash = "0.2.0"
-belt-hash = "0.1.1"
-blake2 = "0.10.6"
-fsb = "0.1.3"
-gost94 = "0.10.4"
-groestl = "0.10.1"
-jh = "0.1.0"
-md2 = "0.10.2"
-md4 = "0.10.2"
-ripemd = "0.1.3"
-sha1 = "0.10.6"
-sha2 = "0.10.8"
-sha3 = "0.10.8"
-shabal = "0.4.1"
-skein = "0.1.0"
-sm3 = "0.4.2"
-streebog = "0.10.2"
-tiger = "0.2.1"
-whirlpool = "0.10.4"
+ascon-hash = { version = "0.2.0", optional = true }
+belt-hash = { version = "0.1.1", optional = true }
+blake2 = { version = "0.10.6", optional = true }
+fsb = { version = "0.1.3", optional = true }
+gost94 = { version = "0.10.4", optional = true }
+groestl = { version = "0.10.1", optional = true }
+jh = { version = "0.1.0", optional = true }
+md2 = { version = "0.10.2", optional = true }
+md4 = { version = "0.10.2", optional = true }
+ripemd = { version = "0.1.3", optional = true }
+sha1 = { version = "0.10.6", optional = true }
+sha2 = { version = "0.10.8", optional = true }
+sha3 = { version = "0.10.8", optional = true }
+shabal = { version = "0.4.1", optional = true }
+skein = { version = "0.1.0", optional = true }
+sm3 = { version = "0.4.2", optional = true }
+streebog = { version = "0.10.2", optional = true }
+tiger = { version = "0.2.1", optional = true }
+whirlpool = { version = "0.10.4", optional = true }
 
 [build-dependencies]
 digest = "0.10.7"
-ascon-hash = "0.2.0"
-belt-hash = "0.1.1"
-blake2 = "0.10.6"
-fsb = "0.1.3"
-gost94 = "0.10.4"
-groestl = "0.10.1"
-jh = "0.1.0"
-md2 = "0.10.2"
-md4 = "0.10.2"
-ripemd = "0.1.3"
-sha1 = "0.10.6"
-sha2 = "0.10.8"
-sha3 = "0.10.8"
-shabal = "0.4.1"
-skein = "0.1.0"
-sm3 = "0.4.2"
-streebog = "0.10.2"
-tiger = "0.2.1"
-whirlpool = "0.10.4"
+ascon-hash = { version = "0.2.0", optional = true }
+belt-hash = { version = "0.1.1", optional = true }
+blake2 = { version = "0.10.6", optional = true }
+fsb = { version = "0.1.3", optional = true }
+gost94 = { version = "0.10.4", optional = true }
+groestl = { version = "0.10.1", optional = true }
+jh = { version = "0.1.0", optional = true }
+md2 = { version = "0.10.2", optional = true }
+md4 = { version = "0.10.2", optional = true }
+ripemd = { version = "0.1.3", optional = true }
+sha1 = { version = "0.10.6", optional = true }
+sha2 = { version = "0.10.8", optional = true }
+sha3 = { version = "0.10.8", optional = true }
+shabal = { version = "0.4.1", optional = true }
+skein = { version = "0.1.0", optional = true }
+sm3 = { version = "0.4.2", optional = true }
+streebog = { version = "0.10.2", optional = true }
+tiger = { version = "0.2.1", optional = true }
+whirlpool = { version = "0.10.4", optional = true }
+
+[dev-dependencies]
+nu-plugin-test-support = "0.98.0"
 
 [profile.release]
 strip = true
