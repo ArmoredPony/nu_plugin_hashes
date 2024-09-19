@@ -56,7 +56,7 @@ fn main() {
   feature = "whirlpool",
 ))]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-  use std::io::Write;
+  use std::{env, io::Write, path::Path};
 
   // MD5 and SHA256 are skipped on purpose
   let hasher_impls: Vec<GeneratedHasherImplMeta> = vec![
@@ -489,19 +489,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     },
   ];
 
+  let out_dir = env::var_os("OUT_DIR").unwrap();
+  let hashers_generated_path = Path::new(&out_dir).join("hashers_generated.rs");
+  let commands_generated_path =
+    Path::new(&out_dir).join("commands_generated.rs");
   let mut hashers_generated_file =
-    std::fs::File::create("./src/hashers_generated.rs").unwrap();
+    std::fs::File::create(hashers_generated_path).unwrap();
   let mut commands_generated_file =
-    std::fs::File::create("./src/commands_generated.rs").unwrap();
+    std::fs::File::create(commands_generated_path).unwrap();
 
   write!(
     hashers_generated_file,
-    "#![allow(unused_imports)]
-
-use nu_protocol::{{Example, Span, Value, ShellError}};
-use nu_plugin::PluginCommand;
-use crate::hasher::{{Hasher, GenericHasher}};
-use crate::HashesPlugin;
+    "use nu_protocol::{{Example, Span, Value}};
+use crate::hasher::Hasher;
 "
   )?;
 
