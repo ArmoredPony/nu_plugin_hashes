@@ -58,6 +58,7 @@ fn main() {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
   use std::io::Write;
 
+  // MD5 and SHA256 are skipped on purpose
   let hasher_impls: Vec<GeneratedHasherImplMeta> = vec![
     #[cfg(feature = "ascon-hash")]
     GeneratedHasherImplMeta {

@@ -12,10 +12,6 @@ impl Plugin for HashesPlugin {
   }
 
   fn commands(&self) -> Vec<Box<dyn nu_plugin::PluginCommand<Plugin = Self>>> {
-    // TODO: try to add `blake2::Blake2bVar`
-    // TODO: try to add `sha1_checked::Sha1`
-    // MD5 is skipped on purpose
-    // SHA256 is skipped on purpose
     commands_generated::commands()
   }
 }
