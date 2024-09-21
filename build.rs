@@ -155,7 +155,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     GeneratedHasherImplMeta {
       crate_name: "groestl",
       hasher_type_name: "Groestl224",
-      hasher_command: "goestl224",
+      hasher_command: "groestl224",
       hasher: Box::new(groestl::Groestl224::default()),
     },
     #[cfg(feature = "groestl")]
@@ -500,8 +500,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
   write!(
     hashers_generated_file,
-    "use nu_protocol::{{Example, Span, Value}};
-use crate::hasher::Hasher;
+    "use nu_protocol::{{Example, Span, Value, ShellError}};
+use nu_plugin::PluginCommand;
+use crate::HashesPlugin;
+use crate::hasher::{{Hasher, GenericHasher}};
 "
   )?;
 
