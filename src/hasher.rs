@@ -77,6 +77,7 @@ where
     Signature::build(self.name())
       .category(Category::Hash)
       .input_output_types(vec![
+        (Type::Binary, Type::Any),
         (Type::String, Type::Any),
         (Type::table(), Type::table()),
         (Type::record(), Type::record()),
