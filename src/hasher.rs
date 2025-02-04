@@ -1,8 +1,8 @@
 //! Contains a generic trait for hashers that implement `Digest`.
 //! This implementation is stolen with minimal changes from *generic_digest.rs*
-//! source code file of nushell v0.98.0 which can be found at
-//! https://github.com/nushell/nushell/blob/0.98.0/crates/nu-command/src/hash/generic_digest.rs
-//! The *hash* crate is private, so I had no choice.
+//! source code file of nushell v0.101.0 which can be found at
+//! https://github.com/nushell/nushell/blob/0.101.0/crates/nu-command/src/hash/generic_digest.rs
+//! The *hash* module is private, so I had no choice.
 
 use std::{io::Write, marker::PhantomData, ops::Not};
 

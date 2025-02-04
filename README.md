@@ -76,7 +76,7 @@ Flags:
 ## Hashes
 
 The list of implemented algorithms provided by the plugin can be found
-in the Hashes project [repository](https://github.com/RustCrypto/hashes?tab=readme-ov-file#supported-algorithms).
+in the Hashes project [repository](https://github.com/RustCrypto/hashes).
 
 Almost all algorithms from this project are included in this plugin. The
 exceptions are MD5 and SHA-256 as they are already present in Nushell, and
@@ -85,7 +85,7 @@ arguments for them to be run.
 
 If you want to import only particular algorithms, build this plugin with those
 features, which names correspond to the crates, that supply the algorithms you
-want. Consult this [table]((https://github.com/RustCrypto/hashes?tab=readme-ov-file#supported-algorithms))
+want. Consult this [table](https://github.com/RustCrypto/hashes?tab=readme-ov-file#supported-algorithms)
 to match features with required algorithms.
 
 If you disable the default features and forget to enable at least one of them,
@@ -94,15 +94,14 @@ the plugin won't compile.
 ## Implemetation details
 
 All the functions are implemented via generic code that I borrowed from Nushell
-source file
-[generic_digest.rs](https://github.com/nushell/nushell/blob/0.98.0/crates/nu-command/src/hash/generic_digest.rs). Help page for each command is generated with a
-[build script](./build.rs). Hashes of the test text for each example are generated
-during compilation by this script: the test text is fed to each hashing
-algorithm, and resulting bytes are inserted into examples. This approach is
-different from Nushell's implementations, where examples are hardcoded as
-strings. Then, generated examples are tested with
-[nu-plugin-test-support](https://crates.io/crates/nu-plugin-test-support) crate.
-This ensures that the code in examples always behaves exactly as printed.
+source file [generic_digest.rs](https://github.com/nushell/nushell/blob/0.101.0/crates/nu-command/src/hash/generic_digest.rs).
+Help page for each command is generated with a [build script](./build.rs).
+Hashes of the test text for each example are generated during compilation by
+this script: the test text is fed to each hashing algorithm, and resulting bytes
+are inserted into examples.This approach isdifferent from Nushell's
+implementations, where examples are hardcoded as strings. Then, generated
+examples are tested with [nu-plugin-test-support](https://crates.io/crates/nu-plugin-test-support)
+crate. This ensures that the code in examples always behaves exactly as printed.
 
 ## TODO
 
