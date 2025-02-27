@@ -71,6 +71,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
       hasher_command: "blake2b-512",
       hasher: Box::new(blake2::Blake2b512::default()),
     },
+    #[cfg(feature = "blake3")]
     GeneratedHasherImplMeta {
       crate_name: "blake3",
       hasher_type_name: "Hasher",
@@ -533,6 +534,7 @@ pub fn commands() -> Vec<Box<dyn PluginCommand<Plugin = HashesPlugin>>> {{
   feature = "ascon-hash",
   feature = "belt-hash",
   feature = "blake2",
+  feature = "blake3",
   feature = "fsb",
   feature = "gost94",
   feature = "groestl",
@@ -608,6 +610,7 @@ impl Hasher for {crate_name}::{hasher_type_name} {{
   feature = "ascon-hash",
   feature = "belt-hash",
   feature = "blake2",
+  feature = "blake3",
   feature = "fsb",
   feature = "gost94",
   feature = "groestl",
