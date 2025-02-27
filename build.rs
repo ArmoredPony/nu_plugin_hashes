@@ -9,35 +9,11 @@ struct GeneratedHasherImplMeta {
   hasher: Box<dyn DynDigest>,
 }
 
-#[cfg(not(any(
-  feature = "ascon-hash",
-  feature = "belt-hash",
-  feature = "blake2",
-  feature = "fsb",
-  feature = "gost94",
-  feature = "groestl",
-  feature = "jh",
-  feature = "md2",
-  feature = "md4",
-  feature = "ripemd",
-  feature = "sha1",
-  feature = "sha2",
-  feature = "sha3",
-  feature = "shabal",
-  feature = "skein",
-  feature = "sm3",
-  feature = "streebog",
-  feature = "tiger",
-  feature = "whirlpool",
-)))]
-fn main() {
-  compile_error!("enable at least one feature to compile this plugin");
-}
-
 #[cfg(any(
   feature = "ascon-hash",
   feature = "belt-hash",
   feature = "blake2",
+  feature = "blake3",
   feature = "fsb",
   feature = "gost94",
   feature = "groestl",
@@ -94,6 +70,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
       hasher_type_name: "Blake2b512",
       hasher_command: "blake2b-512",
       hasher: Box::new(blake2::Blake2b512::default()),
+    },
+    GeneratedHasherImplMeta {
+      crate_name: "blake3",
+      hasher_type_name: "Hasher",
+      hasher_command: "blake3",
+      hasher: Box::new(blake3::Hasher::new()),
     },
     #[cfg(feature = "fsb")]
     GeneratedHasherImplMeta {
@@ -661,4 +643,30 @@ fn test_{test_name}_examples() -> Result<(), ShellError> {{
 }}
   "
   )
+}
+
+#[cfg(not(any(
+  feature = "ascon-hash",
+  feature = "belt-hash",
+  feature = "blake2",
+  feature = "blake3",
+  feature = "fsb",
+  feature = "gost94",
+  feature = "groestl",
+  feature = "jh",
+  feature = "md2",
+  feature = "md4",
+  feature = "ripemd",
+  feature = "sha1",
+  feature = "sha2",
+  feature = "sha3",
+  feature = "shabal",
+  feature = "skein",
+  feature = "sm3",
+  feature = "streebog",
+  feature = "tiger",
+  feature = "whirlpool",
+)))]
+fn main() {
+  compile_error!("enable at least one feature to compile this plugin");
 }
