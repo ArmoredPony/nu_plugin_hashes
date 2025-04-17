@@ -1,11 +1,11 @@
 [package]
 name = "nu_plugin_hashes"
-description = "A Nushell plugin that adds 61 cryptographic hash functions from Hashes project"
+description = "A Nushell plugin that adds 63 cryptographic hash functions from Hashes project"
 keywords = ["nu", "plugin", "hash"]
 categories = ["algorithms"]
 repository = "https://github.com/ArmoredPony/nu_plugin_hashes"
 license = "MIT"
-version = "0.1.6"
+version = "0.1.7"
 edition = "2021"
 
 [features]
