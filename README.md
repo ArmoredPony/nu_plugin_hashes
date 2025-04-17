@@ -1,6 +1,6 @@
 # Hashes for Nushell
 
-A [Nushell](https://www.nushell.sh) plugin that adds a collection of **62**
+A [Nushell](https://www.nushell.sh) plugin that adds a collection of **63**
 cryptographic hash functions from [Hashes](https://github.com/RustCrypto/hashes)
 project.
 
