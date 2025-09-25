@@ -2,9 +2,9 @@
 
 > [!WARNING]
 > This project isn’t being actively maintained - I don’t have the energy to
-> update it to keep up with Nushell updates. It's been months since I used my
-> plugin and I barely use Nushell nowadays. I will not contribute to this
-> project anymore, nor will I accept pull requests. I’m happy to transfer
+> update it to keep up with Nushell updates. It's been months since I last
+> used my plugin and I barely use Nushell nowadays. I will not contribute to
+> this project anymore, nor will I accept pull requests. I’m happy to transfer
 > ownership of this crate on [crates.io](https://crates.io/crates/nu_plugin_hashes)
 > to another contributor if needed. Thanks to everyone who helped and to those
 > who used my plugin.
@@ -116,7 +116,7 @@ crate. This ensures that the code in examples always behaves exactly as printed.
 
 Here is a list of things that could not be implemented with code generation
 as they don't implement the `Digest` trait or require additional arguments
-to be executed. ~~I doubt that I will ever complete this list~~ I will note be
+to be executed. ~~I doubt that I will ever complete this list~~ I will not be
 able to complete this list so you are welcome to contribute.
 
 - [ ] [blake2b] algorithm with runtime defined output size
