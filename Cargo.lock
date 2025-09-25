@@ -1207,7 +1207,7 @@ dependencies = [
 
 [[package]]
 name = "nu_plugin_hashes"
-version = "0.1.8"
+version = "0.1.9"
 dependencies = [
  "ascon-hash",
  "belt-hash",
