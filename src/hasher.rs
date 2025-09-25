@@ -99,7 +99,7 @@ where
     &self.description
   }
 
-  fn examples(&self) -> Vec<Example> {
+  fn examples(&self) -> Vec<Example<'_>> {
     H::examples()
   }
 
